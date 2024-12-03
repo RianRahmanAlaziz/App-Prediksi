@@ -11,20 +11,6 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/-Fixed-Navbar-start-with-transparency-background-BS4--transparency-menu.css">
 </head>
-<style>
-    .custom-card {
-        background-color: rgba(255, 255, 255, 0.5);
-        /* Transparansi pada card */
-    }
-
-    .custom-card input,
-    .custom-card select {
-        background-color: rgba(255, 255, 255, 0.5);
-        /* Transparansi pada input dan select */
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        /* Border agar elemen terlihat */
-    }
-</style>
 
 <body>
     <div>
