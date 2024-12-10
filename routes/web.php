@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataPengunjungController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
-
+Route::get('/prediksi', [HomeController::class, 'prediksi']);
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
+    Route::resource('data-pengunjung', DataPengunjungController::class);
 });

@@ -63,9 +63,9 @@
                 </div>
             </li>
             <li class="nav-item border-start my-0 pt-2">
-                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ Request::is('dashboard/data-user-management') ? 'active' : '' }}"
-                    href="/dashboard/admin/data-user-management">
-                    <span class="nav-link-text ms-1">Data User</span>
+                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ Request::is('dashboard/data-pengunjung') ? 'active' : '' }}"
+                    href="/dashboard/data-pengunjung">
+                    <span class="nav-link-text ms-1">Data Pengunjung</span>
                 </a>
             </li>
 

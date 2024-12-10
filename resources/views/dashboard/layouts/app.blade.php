@@ -10,7 +10,7 @@
      --}}
     <link rel="icon" type="image/png" href="/assets/img/logo.png">
     <title>
-        {{ $title }}
+        Dashboard | {{ $title }}
     </title>
     <!--     Fonts and icons     -->
     <link
@@ -38,7 +38,6 @@
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         @include('dashboard.layouts.navbar')
         @yield('container')
-        {{-- @include('dashboard.layouts.footer') --}}
     </main>
 
 
