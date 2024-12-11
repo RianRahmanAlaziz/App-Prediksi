@@ -17,6 +17,23 @@ class HomeController extends Controller
         ]);
     }
 
+    function about()
+    {
+        return view('home.aboutus.index', [
+            'title' => 'Dashboard',
+
+        ]);
+    }
+
+
+    function vm()
+    {
+        return view('home.visimisi.index', [
+            'title' => 'Dashboard',
+
+        ]);
+    }
+
     function fasilitas()
     {
         return view('home.fasilitas.index', [

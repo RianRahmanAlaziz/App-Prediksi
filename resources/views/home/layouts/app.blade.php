@@ -18,6 +18,10 @@
         /* Menyesuaikan warna teks saat hover */
     }
 
+    .padding {
+        padding-top: 15vh;
+    }
+
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;

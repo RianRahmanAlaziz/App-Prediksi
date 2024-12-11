@@ -21,6 +21,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/prediksi', 'prediksi');
     Route::get('/fasilitas', 'fasilitas');
+    Route::get('/about-us', 'about');
+    Route::get('/visi-misi', 'vm');
 });
 
 
