@@ -68,7 +68,12 @@
                     <span class="nav-link-text ms-1">Data Pengunjung</span>
                 </a>
             </li>
-
+            <li class="nav-item border-start my-0 pt-2">
+                <a class="nav-link position-relative ms-0 ps-2 py-2 {{ Request::is('dashboard/data-fasilitas') ? 'active' : '' }}"
+                    href="/dashboard/data-fasilitas">
+                    <span class="nav-link-text ms-1">Data Fasilitas</span>
+                </a>
+            </li>
 
         </ul>
     </div>

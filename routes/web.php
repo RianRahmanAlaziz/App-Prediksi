@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataPengunjungController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,12 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/prediksi', 'prediksi');
+    Route::get('/fasilitas', 'fasilitas');
+});
 
-
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/prediksi', [HomeController::class, 'prediksi']);
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('data-pengunjung', DataPengunjungController::class);
+    Route::resource('data-fasilitas', FasilitasController::class);
 });

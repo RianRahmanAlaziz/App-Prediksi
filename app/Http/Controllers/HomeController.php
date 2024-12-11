@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataPengunjung;
+use App\Models\Fasilitas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,15 @@ class HomeController extends Controller
 
         ]);
     }
+
+    function fasilitas()
+    {
+        return view('home.fasilitas.index', [
+            'title' => 'Fasilitas',
+            'fasilitas' => Fasilitas::all()
+        ]);
+    }
+
 
     public function prediksi(Request $request)
     {
