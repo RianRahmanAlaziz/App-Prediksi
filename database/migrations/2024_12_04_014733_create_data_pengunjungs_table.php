@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_pengunjungs', function (Blueprint $table) {
             $table->id();
-            $table->integer('bulan');
-            $table->integer('tahun');
+            $table->date('date');
             $table->integer('pengunjung');
             $table->timestamps();
         });

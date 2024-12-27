@@ -17,23 +17,11 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group has-danger">
-                                <label for="bulan">Bulan</label>
-                                <select name="bulan" id="bulan" class="form-control">
-                                    @for ($i = 1; $i <= 12; $i++)
-                                        <option value="{{ $i }}"
-                                            {{ old('bulan', $item->bulan) == $i ? 'selected' : '' }}>
-                                            {{ $namabulan[$i] }}
-                                        </option>
-                                    @endfor
-                                </select>
-
-                            </div>
-                            <div class="form-group has-danger">
-                                <label for="tahun">Tahun</label>
-                                <input type="number" class="form-control @error('tahun') is-invalid @enderror"
-                                    name="tahun" id="tahun" required autofocus
-                                    value="{{ old('tahun', $item->tahun) }}">
-                                @error('tahun')
+                                <label for="date">date</label>
+                                <input type="date" class="form-control @error('date') is-invalid @enderror"
+                                    name="date" id="date" required autofocus
+                                    value="{{ old('date', $item->date) }}">
+                                @error('date')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

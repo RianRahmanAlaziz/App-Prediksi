@@ -6,6 +6,7 @@ use App\Models\DataPengunjung;
 use App\Models\Fasilitas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Phpml\Regression\LeastSquares;
 
 class HomeController extends Controller
 {
@@ -45,33 +46,29 @@ class HomeController extends Controller
 
     public function prediksi(Request $request)
     {
-        $request->validate([
-            'tanggal' => 'required|date',
-            'cuaca' => 'required|string'
-        ]);
+        $data = DataPengunjung::all();
 
-        // Input dari form atau API
-        $tanggal = $request->input('tanggal');  // Format: YYYY-MM-DD
-        $cuaca = $request->input('cuaca');      // Bisa "cerah" atau "mendung"
+        // Format data untuk regresi linear
+        $samples = [];
+        $targets = [];
 
-        // Jalankan script Python
-        $command = escapeshellcmd("python3 C:/Users/Endang/Documents/Belajar/app-prediksi/public/assets/scripts/prediksi_pengunjung.py $tanggal $cuaca");
-
-        $output = shell_exec($command);
-
-        // Debugging output, cek apakah ada output dari Python
-        if ($output === null || trim($output) === '') {
-            // Jika tidak ada output atau output kosong, kita tampilkan pesan debug
-            return response()->json([
-                'message' => 'Tidak ada output dari script Python',
-                'command' => $command, // Untuk membantu debugging, tampilkan command yang dieksekusi
-                'prediksi_pengunjung' => $output
-            ]);
+        foreach ($data as $item) {
+            $samples[] = [strtotime($item->date)];
+            $targets[] = $item->pengunjung;
         }
 
-        // Kembalikan hasil prediksi
+        // Inisialisasi model regresi linear
+        $regression = new LeastSquares();
+        $regression->train($samples, $targets);
+
+        // Prediksi berdasarkan hari yang diberikan
+        $date = strtotime($request->date);
+        $predicted = $regression->predict([$date]);
+
+        $hasil = round($predicted);
         return response()->json([
-            'prediksi_pengunjung' => trim($output)
+            'date' => $request->date,
+            'prediksi' => $hasil,
         ]);
     }
 }

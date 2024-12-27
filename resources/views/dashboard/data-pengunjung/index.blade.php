@@ -34,9 +34,7 @@
                                     <tr>
                                         <th class="text-secondary text-xs font-weight-semibold opacity-7" width="5%">No
                                         </th>
-                                        <th class="text-secondary text-xs font-weight-semibold ps-2 opacity-7">Bulan
-                                        </th>
-                                        <th class="text-secondary text-xs font-weight-semibold ps-2 opacity-7">Tahun
+                                        <th class="text-secondary text-xs font-weight-semibold ps-2 opacity-7">Tanggal
                                         </th>
                                         <th class="text-secondary text-xs font-weight-semibold ps-2 opacity-7">Jumlah
                                             Pengunjung
@@ -51,9 +49,8 @@
                                             <td class="text-center align-middle text-secondary text-sm font-weight-normal">
                                                 {{ $loop->iteration }}</td>
                                             <td class="align-middle text-secondary text-sm font-weight-normal">
-                                                {{ $namabulan[$item->bulan] }}</td>
-                                            <td class="align-middle text-secondary text-sm font-weight-normal">
-                                                {{ $item->tahun }}</td>
+                                                {{ \Carbon\Carbon::parse($item->date)->translatedFormat('d-M-Y') }}
+                                            </td>
                                             <td class="align-middle text-secondary text-sm font-weight-normal">
                                                 {{ $item->pengunjung }}</td>
                                             <td class="text-center align-middle bg-transparent border-bottom">

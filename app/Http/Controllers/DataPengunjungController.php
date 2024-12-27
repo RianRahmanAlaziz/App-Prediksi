@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataPengunjung;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class DataPengunjungController extends Controller
 {
@@ -12,12 +13,10 @@ class DataPengunjungController extends Controller
      */
     public function index()
     {
-        $namabulan = ["", "January", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember",];
-
+        Carbon::setLocale('id');
         return view('dashboard.data-pengunjung.index', [
             'title' => 'Data Pengunjung',
             'datap' => DataPengunjung::all(),
-            'namabulan' => $namabulan,
         ]);
     }
 
@@ -35,8 +34,7 @@ class DataPengunjungController extends Controller
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'bulan' => 'required',
-            'tahun' => 'required',
+            'date' => 'required',
             'pengunjung' => 'required',
         ]);
 
@@ -67,8 +65,7 @@ class DataPengunjungController extends Controller
     {
 
         $validator = $request->validate([
-            'bulan' => 'required',
-            'tahun' => 'required',
+            'date' => 'required',
             'pengunjung' => 'required',
         ]);
 
