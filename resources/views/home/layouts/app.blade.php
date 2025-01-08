@@ -125,15 +125,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Prediksi</title>
     <link rel="icon" type="image/png" href="/assets/img/logo.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
     <link rel="stylesheet"
-        href="assets/css/-Fixed-Navbar-start-with-transparency-background-BS4--transparency-menu.css">
+        href="/assets/css/-Fixed-Navbar-start-with-transparency-background-BS4--transparency-menu.css">
+    <link rel="stylesheet" href="/css/login-1.css" />
+
+
 </head>
 
 <body>
     <header>
         @include('home.layouts.navbar')
+
         @yield('container')
     </header>
 

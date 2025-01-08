@@ -23,6 +23,16 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link text-dark fw-bold" href="/fasilitas">Fasilitas</a></li>
+                <li class="nav-item">
+
+                    @if (Auth::check())
+                        <a class="nav-link text-dark fw-bold" href="/dashboard">Dashboard</a>
+                    @else
+                        {{-- <a class="nav-link text-dark fw-bold" href="" data-bs-target="#login"
+                            data-bs-toggle="modal">Login</a> --}}
+                        <a class="nav-link text-dark fw-bold" href="/login">Login</a>
+                    @endif
+                </li>
             </ul>
         </div>
     </div>
