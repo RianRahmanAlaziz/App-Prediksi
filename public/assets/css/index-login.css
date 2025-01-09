@@ -6,6 +6,9 @@
 
 .bl {
     background-color: #6f7074;
+    background-image: url('/assets/img/banner-home.jpg');
+    background-size:cover; 
+    min-height: 100vh;
 }
 .container {
     height: 100vh;

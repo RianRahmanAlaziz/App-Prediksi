@@ -18,7 +18,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item " href="/about-us">About Us</a></li>
-                        <li><a class="dropdown-item" href="/visi-misi">Another action</a></li>
+                        <li><a class="dropdown-item" href="/visi-misi">Visi Misi</a></li>
 
                     </ul>
                 </li>

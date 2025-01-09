@@ -26,9 +26,8 @@
                                         <p class="fw-bold" data-aos="zoom-out-up" data-aos-duration="450"
                                             data-aos-delay="400"
                                             style="text-align: justify;font-size: 1rem;color: #000000;font-family: Poppins, sans-serif;">
-                                            Berkompeten, profesional, berkualitas dan terpercaya dalam bidang menyediakan,
-                                            pemasaran dan pelayanan Networking Cabinet Rack System ke seluruh wilayah di
-                                            Indonesia.</p>
+                                            Menjadi perpustakaan parlemen yang unggul dengan ragam informasi, koleksi, dan
+                                            layanan untuk mendukung tugas dan fungsi DPR RI</p>
                                     </div>
                                 </div>
                             </div>
@@ -43,21 +42,12 @@
                                             data-aos-delay="500"
                                             style="font-family: Riporno;color: #000000;font-size: 2rem;">
                                             MISI</h1>
-                                        <ul class="fw-bold" data-aos="zoom-out-up" data-aos-duration="600"
-                                            data-aos-delay="550" style="color: #000000;">
-                                            <li style="fw-bold text-align: left;font-family: Poppins, sans-serif;">
-                                                Memberikan
-                                                pelayanan terbaik dan produk berkualitas dengan harga yang kompetitif kepada
-                                                seluruh pelanggan dan mitra kami.</li>
-                                            <li style="fw-bold text-align: justify;font-family: Poppins, sans-serif;">
-                                                Pengembangan
-                                                produk terus menerus untuk memenuhi permintaan pasar dan teknologi terkini.
-                                            </li>
-                                            <li style="fw-bold text-align: justify;font-family: Poppins, sans-serif;">
-                                                Menjadi mitra
-                                                yang dapat dipercaya untuk memecahkan masalah pelanggan dan menjadi solusi
-                                                bagi kebutuhan pelanggan.</li>
-                                        </ul>
+
+                                        <p class="fw-bold" data-aos="zoom-out-up" data-aos-duration="450"
+                                            data-aos-delay="400"
+                                            style="text-align: justify;font-size: 1rem;color: #000000;font-family: Poppins, sans-serif;">
+                                            Menyediakan layanan data dan informasi yang cepat, tepat, akurat terbarukan
+                                            dan terus menerus secara berkala kepada Anggota DPR RI beserta pendukugnya</p>
                                     </div>
                                 </div>
                             </div>

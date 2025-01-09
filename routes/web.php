@@ -33,7 +33,7 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 
-Route::prefix('dashboard')->group(function () {
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('data-pengunjung', DataPengunjungController::class);
     Route::resource('data-fasilitas', FasilitasController::class);
