@@ -3,48 +3,44 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataPengunjung;
-use App\Models\Fasilitas;
-use Carbon\Carbon;
+use App\Models\Perhitungan;
 use Illuminate\Http\Request;
-use Phpml\Regression\LeastSquares;
 
-class HomeController extends Controller
+class PerhitunganController extends Controller
 {
-    function index()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('home.index', [
+        $data = DataPengunjung::all();
+
+        // Variabel untuk menyimpan total
+        $sumx = 0;
+        $totalXY = 0;
+        $totalXSquare = 0;
+
+        // Looping untuk menghitung total X.Y dan X²
+        foreach ($data as $item) {
+            $xy = (int) \Carbon\Carbon::parse($item->date)->translatedFormat('d') * $item->pengunjung;
+            $xSquare = \Carbon\Carbon::parse($item->date)->translatedFormat('d') * \Carbon\Carbon::parse($item->date)->translatedFormat('d');
+            // Sum dates
+            $sumx += (int) \Carbon\Carbon::parse($item->date)->translatedFormat('d');
+            // Tambahkan ke total
+            $totalXY += $xy;
+            $totalXSquare += $xSquare;
+        }
+
+
+        return view('dashboard.perhitungan.perhitungan', [
             'title' => 'Dashboard',
-
+            'datap' => $data,
+            'sumx' => $sumx,
+            'totalxy' => $totalXY,
+            'totalXSquare' => $totalXSquare,
         ]);
     }
-
-    function about()
-    {
-        return view('home.aboutus.index', [
-            'title' => 'Dashboard',
-
-        ]);
-    }
-
-
-    function vm()
-    {
-        return view('home.visimisi.index', [
-            'title' => 'Dashboard',
-
-        ]);
-    }
-
-    function fasilitas()
-    {
-        return view('home.fasilitas.index', [
-            'title' => 'Fasilitas',
-            'fasilitas' => Fasilitas::all()
-        ]);
-    }
-
-
-    public function prediksi(Request $request)
+    public function perhitungan()
     {
         $data = DataPengunjung::all();
         // Variabel untuk menyimpan total
@@ -74,11 +70,9 @@ class HomeController extends Controller
         $a = ($nilaiy - $b * $nilaix) / $nilain;
 
         // Hasil prediksi menggunakan persamaan regresi y = a + bx
-        $xPrediksi = Carbon::parse($request->date)->format('d');
+        $xPrediksi = 4; // Contoh prediksi untuk hari ke-9
         $yPrediksi = $a + $b * $xPrediksi;
-        return response()->json([
-            'date' => $request->date,
-            'prediksi' => $yPrediksi,
-        ]);
+
+        dd($yPrediksi);
     }
 }

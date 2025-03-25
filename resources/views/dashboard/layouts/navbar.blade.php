@@ -11,14 +11,14 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group">
-                    <span class="input-group-text text-body bg-white  border-end-0 ">
+                    {{-- <span class="input-group-text text-body bg-white  border-end-0 ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                         </svg>
                     </span>
-                    <input type="text" class="form-control ps-0" placeholder="Search">
+                    <input type="text" class="form-control ps-0" placeholder="Search"> --}}
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item px-3 d-flex align-items-center">
+                {{-- <li class="nav-item px-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0">
                         <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"
                             class="fixed-plugin-button-nav cursor-pointer" viewBox="0 0 24 24" fill="#fff">
@@ -41,7 +41,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item dropdown ps-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="a" data-bs-toggle="dropdown"
@@ -50,9 +50,9 @@
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="a">
                         <li class="mb-2">
-                            <a href="/dashboard/user-profil" class="dropdown-item border-radius-md"><i
-                                    class="fa-solid fa-user"></i>
-                                Profil</a>
+                            <a href="/" class="dropdown-item border-radius-md">
+                                <i class="fa-solid fa-house"></i>
+                                Home</a>
                         </li>
                         <li class="mb-2">
                             <button class=" dropdown-item border-radius-md" type="button" data-bs-toggle="modal"

@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataPengunjungController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PerhitunganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,4 +38,6 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('data-pengunjung', DataPengunjungController::class);
     Route::resource('data-fasilitas', FasilitasController::class);
+    Route::get('perhitungan', [PerhitunganController::class, 'index']);
+    Route::get('hitung', [PerhitunganController::class, 'perhitungan']);
 });
