@@ -40,4 +40,5 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::resource('data-fasilitas', FasilitasController::class);
     Route::get('perhitungan', [PerhitunganController::class, 'index']);
     Route::get('hitung', [PerhitunganController::class, 'perhitungan']);
+    Route::get('hasil', [PerhitunganController::class, 'hasil']);
 });

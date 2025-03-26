@@ -39,9 +39,10 @@
                                 <p class="text-sm"></p>
                             </div>
                             <div class="ms-auto d-flex">
-                                <button type="button" class="btn btn-sm btn-dark btn-icon d-flex align-items-center me-2">
+                                <a href="/dashboard/hasil" type="button"
+                                    class="btn btn-sm btn-dark btn-icon d-flex align-items-center me-2">
                                     <span class="btn-inner--text">Hitung Nilai A dan B</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

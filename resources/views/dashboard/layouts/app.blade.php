@@ -30,6 +30,20 @@
         integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <style>
+        /* Menimpa gaya MathJax untuk display mode */
+        mjx-container[jax="SVG"][display="true"] {
+            text-align: left !important;
+            /* Ubah menjadi left */
+            margin: 0;
+            /* Sesuaikan margin jika perlu */
+        }
+
+        /* Menimpa gaya MathJax untuk inline mode */
+        mjx-container[jax="SVG"] {
+            text-align: left !important;
+        }
+    </style>
 
 </head>
 
@@ -80,6 +94,8 @@
             toastr.error("{{ session('error') }}")
         @endif
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 

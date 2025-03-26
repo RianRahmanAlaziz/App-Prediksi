@@ -33,7 +33,7 @@ class PerhitunganController extends Controller
 
 
         return view('dashboard.perhitungan.perhitungan', [
-            'title' => 'Dashboard',
+            'title' => 'Perhitungan',
             'datap' => $data,
             'sumx' => $sumx,
             'totalxy' => $totalXY,
@@ -74,5 +74,40 @@ class PerhitunganController extends Controller
         $yPrediksi = $a + $b * $xPrediksi;
 
         dd($yPrediksi);
+    }
+
+    function hasil()
+    {
+        $data = DataPengunjung::all();
+        // Variabel untuk menyimpan total
+        $sumx = 0;
+        $totalXY = 0;
+        $totalXSquare = 0;
+
+        // Looping untuk menghitung total X.Y dan X²
+        foreach ($data as $item) {
+            $xy = (int) \Carbon\Carbon::parse($item->date)->translatedFormat('d') * $item->pengunjung;
+            $xSquare = \Carbon\Carbon::parse($item->date)->translatedFormat('d') * \Carbon\Carbon::parse($item->date)->translatedFormat('d');
+            // Sum dates
+            $sumx += (int) \Carbon\Carbon::parse($item->date)->translatedFormat('d');
+            // Tambahkan ke total
+            $totalXY += $xy;
+            $totalXSquare += $xSquare;
+        }
+        $nilaix = $sumx;
+        $nilaiy = $data->sum('pengunjung');
+        $nilaixy = $totalXY;
+        $Xkuadrat = $totalXSquare;
+        $nilain = count($data); // Jumlah data
+
+
+        return view('dashboard.perhitungan.hasil', [
+            'title' => 'Hasil',
+            'nilaix' => $nilaix,
+            'nilaiy' => $nilaiy,
+            'nilaixy' => $nilaixy,
+            'Xkuadrat' => $Xkuadrat,
+            'nilain' => $nilain,
+        ]);
     }
 }
