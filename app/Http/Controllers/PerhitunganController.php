@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataPengunjung;
 use App\Models\Perhitungan;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PerhitunganController extends Controller
 {
@@ -76,7 +77,7 @@ class PerhitunganController extends Controller
         dd($yPrediksi);
     }
 
-    function hasil()
+    function hasil(Request $request)
     {
         $data = DataPengunjung::all();
         // Variabel untuk menyimpan total
@@ -100,7 +101,34 @@ class PerhitunganController extends Controller
         $Xkuadrat = $totalXSquare;
         $nilain = count($data); // Jumlah data
 
+        // Ambil nilai tanggal dari request
+        $x = Carbon::parse($request->date)->format('d');
+        $tanggal = $request->date;
+        if ($tanggal) {
 
+            $nilaix = $sumx;
+            $nilaiy = $data->sum('pengunjung');
+            $nilaixy = $totalXY;
+            $Xkuadrat = $totalXSquare;
+            $nilain = count($data); // Jumlah data
+
+            $b = ($nilain * $nilaixy - $nilaix * $nilaiy) / ($nilain * $Xkuadrat - $nilaix * $nilaix);
+            $a = ($nilaiy - $b * $nilaix) / $nilain;
+
+            // Kirim data ke tampilan
+            return view('dashboard.perhitungan.hasil', [
+                'title' => 'Hasil',
+                'nilaix' => $nilaix,
+                'nilaiy' => $nilaiy,
+                'nilaixy' => $nilaixy,
+                'Xkuadrat' => $Xkuadrat,
+                'nilain' => $nilain,
+                'a' => $a,
+                'b' => $b,
+                'x' => $x,
+                'tanggal' => $tanggal,
+            ]);
+        }
         return view('dashboard.perhitungan.hasil', [
             'title' => 'Hasil',
             'nilaix' => $nilaix,
